@@ -10,12 +10,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.omnibus.chef_version = :latest
   config.berkshelf.enabled = true
   config.vm.box = "phusion/ubuntu-14.04-amd64"
-  # config.vm.box = "ubuntu/trusty64"
-  # config.vm.box = "chef/ubuntu-14.04"
   config.ssh.insert_key=false
-  # config.vm.network :private_network, ip: "172.28.128.99", :adapter => 2, :name => 'VirtualBox Host-Only Ethernet Adapter'
-  # config.vm.network :private_network, :type => 'dhcp', :adapter => 2, :name => 'VirtualBox Host-Only Ethernet Adapter'
-  config.vm.network :private_network, :type => 'dhcp', :adapter => 2
+  config.vm.network :private_network, ip: "192.168.9.99", :adapter => 2
   config.vm.provider :virtualbox do |vb|
     vb.gui = true
     vb.customize ["modifyvm", :id, "--memory", "4096"]
