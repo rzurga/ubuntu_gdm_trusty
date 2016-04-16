@@ -34,6 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         "recipe[rztimezone]",
         "recipe[linux_tools::screen]",
         "recipe[linux_tools::tree]",
+        "recipe[linux_tools::makepasswd]",
         "recipe[git]",
         "recipe[anaconda::default]",
         "recipe[anaconda::shell_conveniences]",
