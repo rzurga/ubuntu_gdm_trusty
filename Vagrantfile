@@ -32,7 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
 
     chef.run_list = [
-        "recipe[wily::removeLCX]",
+        "recipe[wily::removeLXC]",
         "recipe[rztimezone]",
         "recipe[linux_tools::screen]",
         "recipe[linux_tools::tree]",
