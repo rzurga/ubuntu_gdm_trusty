@@ -9,9 +9,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "trusty"
   config.omnibus.chef_version = :latest
   config.berkshelf.enabled = true
-  config.vm.box = "phusion/ubuntu-14.04-amd64"
+  # config.vm.box = "phusion/ubuntu-14.04-amd64"
+  config.vm.box = "ubuntu/wily64"
   config.ssh.insert_key=false
-  config.vm.network :private_network, ip: "192.168.9.99", :adapter => 2
+  config.vm.network :private_network, ip: "192.168.9.99", adapter: 2, name: "VirtualBox Host-Only Ethernet Adapter #3"
   config.vm.provider :virtualbox do |vb|
     vb.gui = true
     vb.customize ["modifyvm", :id, "--memory", "4096"]
@@ -31,6 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
 
     chef.run_list = [
+        "recipe[wily::removeLCX]",
         "recipe[rztimezone]",
         "recipe[linux_tools::screen]",
         "recipe[linux_tools::tree]",
