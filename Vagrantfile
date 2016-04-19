@@ -38,6 +38,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         "recipe[linux_tools::tree]",
         "recipe[linux_tools::pv]",
         "recipe[linux_tools::makepasswd]",
+        "recipe[linux_tools::apt-show_versions]",
         "recipe[git]",
         "recipe[anaconda::default]",
         "recipe[anaconda::shell_conveniences]",
