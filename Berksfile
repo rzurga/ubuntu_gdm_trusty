@@ -12,3 +12,6 @@ cookbook 'myreboot', git: "https://github.com/rzurga/myreboot.git"
 cookbook 'vbox_guest_additions', git: "https://github.com/rzurga/vbox_guest_additions.git"
 cookbook 'mypython', git: "https://github.com/rzurga/mypython.git"
 cookbook 'wily', git: "https://github.com/rzurga/wily.git"
+cookbook 'java', '~> 1.39.0'
+cookbook 'idea', git: "https://github.com/vptheron/chef-idea.git"
+

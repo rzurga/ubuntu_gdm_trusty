@@ -32,14 +32,18 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
 
     chef.run_list = [
+        "recipe[ubuntu_gdm::default]",
         "recipe[wily::removeLXC]",
         "recipe[rztimezone]",
         "recipe[linux_tools::screen]",
         "recipe[linux_tools::tree]",
         "recipe[linux_tools::pv]",
         "recipe[linux_tools::makepasswd]",
-        "recipe[linux_tools::apt-show_versions]",
+        "recipe[linux_tools::apt_show_versions]",
+        "recipe[linux_tools::ca_certificates]",
         "recipe[git]",
+        "recipe[java]",
+        "recipe[idea::default]",
         "recipe[anaconda::default]",
         "recipe[anaconda::shell_conveniences]",
         "recipe[anaconda::notebook_server]",
